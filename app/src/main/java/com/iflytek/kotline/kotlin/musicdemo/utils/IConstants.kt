@@ -1,6 +1,6 @@
 package com.iflytek.kotline.kotlin.musicdemo.utils
 
-class IConstants {
+ class IConstants {
 
     var MUSIC_COUNT_CHANGED = "com.wm.remusic.musiccountchanged"
     var PLAYLIST_ITEM_MOVED = "com.wm.remusic.mmoved"
