@@ -4,6 +4,8 @@ import android.app.Application
 import android.os.Looper
 import android.widget.Toast
 import com.iflytek.kotline.kotlin.musicdemo.App
+import java.io.File
+import java.io.PrintWriter
 
 class UnceHandler(application: Application) : Thread.UncaughtExceptionHandler {
 
@@ -29,6 +31,19 @@ class UnceHandler(application: Application) : Thread.UncaughtExceptionHandler {
        }.start()
 
 
+        var file: File= File(application.cacheDir.absolutePath + "/err/" + System.currentTimeMillis() + ".log")
+          if (!file.exists()){
+              file.mkdir()
+          }
+        try {
+        var writer:PrintWriter = PrintWriter(application.cacheDir.absolutePath + "/err/" + System.currentTimeMillis() + ".log")
+            ex.printStackTrace(writer)
+            writer.close()
+
+        }catch (e : Exception ){
+            e.printStackTrace()
+        }
+       return true
 
     }
 
