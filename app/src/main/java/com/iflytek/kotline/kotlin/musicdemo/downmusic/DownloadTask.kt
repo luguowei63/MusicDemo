@@ -3,13 +3,8 @@ package com.iflytek.kotline.kotlin.musicdemo.downmusic
 /**
  *Created by lgw on 2020/10/14
  */
-class DownloadTask :Runnable {
-
-
-
-
-
-
+class DownloadTask : Runnable {
+    lateinit var dbEntity: DownloadDBEntity
 
 
 
